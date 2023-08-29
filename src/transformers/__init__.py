@@ -254,6 +254,15 @@ _import_structure = {
         "CLIPSegTextConfig",
         "CLIPSegVisionConfig",
     ],
+    "models.mumur": [
+        "MUMUR_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "MuMURConfig",
+       
+        "MuMURTextConfig",
+        "MuMURVisionConfig",
+        "MuMURMultilingualTextConfig",
+        "MuMURMultiModalConfig"
+    ],
     "models.codegen": ["CODEGEN_PRETRAINED_CONFIG_ARCHIVE_MAP", "CodeGenConfig", "CodeGenTokenizer"],
     "models.conditional_detr": ["CONDITIONAL_DETR_PRETRAINED_CONFIG_ARCHIVE_MAP", "ConditionalDetrConfig"],
     "models.convbert": ["CONVBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "ConvBertConfig", "ConvBertTokenizer"],
@@ -1400,6 +1409,16 @@ else:
             "CLIPSegPreTrainedModel",
             "CLIPSegTextModel",
             "CLIPSegVisionModel",
+        ]
+    )
+    _import_structure["models.mumur"].extend(
+        [
+            "MUMUR_PRETRAINED_MODEL_ARCHIVE_LIST",
+            "MuMURForImageSegmentation",
+            "MuMURModel",
+            "MuMURPreTrainedModel",
+            "MuMURTextModel",
+            "MuMURVisionModel",
         ]
     )
     _import_structure["models.codegen"].extend(
@@ -4307,6 +4326,13 @@ if TYPE_CHECKING:
         CLIPSegTextConfig,
         CLIPSegVisionConfig,
     )
+    from .models.mumur import (
+        MUMUR_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        MuMURConfig,
+       
+        MuMURTextConfig,
+        MuMURVisionConfig,
+    )
     from .models.codegen import CODEGEN_PRETRAINED_CONFIG_ARCHIVE_MAP, CodeGenConfig, CodeGenTokenizer
     from .models.conditional_detr import CONDITIONAL_DETR_PRETRAINED_CONFIG_ARCHIVE_MAP, ConditionalDetrConfig
     from .models.convbert import CONVBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, ConvBertConfig, ConvBertTokenizer
@@ -5321,6 +5347,14 @@ if TYPE_CHECKING:
             CLIPSegPreTrainedModel,
             CLIPSegTextModel,
             CLIPSegVisionModel,
+        )
+        from .models.mumur import (
+            MUMUR_PRETRAINED_MODEL_ARCHIVE_LIST,
+            MuMURForImageSegmentation,
+            MuMURModel,
+            MuMURPreTrainedModel,
+            MuMURTextModel,
+            MuMURVisionModel,
         )
         from .models.codegen import (
             CODEGEN_PRETRAINED_MODEL_ARCHIVE_LIST,
